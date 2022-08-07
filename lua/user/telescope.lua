@@ -155,8 +155,8 @@ telescope.setup {
       theme = "dropdown",
     },
     find_files = {
-      theme = "dropdown",
-      previewer = false,
+      -- theme = "dropdown",
+      -- previewer = false,
     },
     buffers = {
       theme = "dropdown",
@@ -205,3 +205,14 @@ telescope.setup {
     },
   },
 }
+
+local M = {}
+
+M.search_curr_buff = function()
+    local opts = require('telescope.themes').get_dropdown({
+        layout_config = {height=10},
+        previewer=false,
+        winblend=10})
+    require('telescope.builtin').current_buffer_fuzzy_find(opts)
+end
+return M

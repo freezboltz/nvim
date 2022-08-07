@@ -153,14 +153,13 @@ local mappings = {
 
   o = {
     name = "Options",
-    c = { '<cmd>lua vim.g.cmp_active=false<cr>', "Completion off" },
-    C = { '<cmd>lua vim.g.cmp_active=true<cr>', "Completion on" },
+    c = { "<cmd>lua vim.g.cmp_active=false<cr>", "Completion off" },
+    C = { "<cmd>lua vim.g.cmp_active=true<cr>", "Completion on" },
     w = { '<cmd>lua require("user.functions").toggle_option("wrap")<cr>', "Wrap" },
     r = { '<cmd>lua require("user.functions").toggle_option("relativenumber")<cr>', "Relative" },
     l = { '<cmd>lua require("user.functions").toggle_option("cursorline")<cr>', "Cursorline" },
     s = { '<cmd>lua require("user.functions").toggle_option("spell")<cr>', "Spell" },
     t = { '<cmd>lua require("user.functions").toggle_tabline()<cr>', "Tabline" },
-
   },
 
   -- s = {
@@ -171,7 +170,11 @@ local mappings = {
 
   s = {
     name = "Session",
-    s = { "<cmd>SaveSession<cr>", "Save" },
+    s = {
+      "<cmd>lua require('user.telescope').search_curr_buff()<cr>",
+      "Search current buffer",
+    },
+    S = { "<cmd>SaveSession<cr>", "Save" },
     r = { "<cmd>RestoreSession<cr>", "Restore" },
     x = { "<cmd>DeleteSession<cr>", "Delete" },
     f = { "<cmd>Autosession search<cr>", "Find" },
@@ -213,11 +216,11 @@ local mappings = {
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     f = { "<cmd>Telescope find_files<cr>", "Find files" },
-    t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+    g = { "<cmd>Telescope live_grep<cr>", "Find Text" },
     s = { "<cmd>Telescope grep_string<cr>", "Find String" },
     h = { "<cmd>Telescope help_tags<cr>", "Help" },
     H = { "<cmd>Telescope highlights<cr>", "Highlights" },
-    i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
+    -- i = { "<cmd>lua require('telescope').extensions.media_files.media_files()<cr>", "Media" },
     l = { "<cmd>Telescope resume<cr>", "Last Search" },
     M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
     r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
