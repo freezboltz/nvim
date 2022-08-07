@@ -181,6 +181,10 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 --   end,
 -- })
 
+local clean = vim.api.nvim_create_augroup("MeterOne", {clear = true})
+vim.api.nvim_create_autocmd("BufWritePre", {pattern = "*", command = [[%s/\s\+$//e]], group = clean, desc = "Remove trailing white space"})
+vim.api.nvim_create_autocmd("BufWritePre", {pattern = "*", command = [[%s/\n\+\%$//e]], group = clean, desc = "Remove trailing new line"})
+
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   pattern = { "*.ts" },
   callback = function()
