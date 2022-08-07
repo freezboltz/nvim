@@ -208,6 +208,20 @@ telescope.setup {
 
 local M = {}
 
+M.search_dotfiles = function()
+    require("telescope.builtin").find_files({
+        prompt_title = "< VimRC >",
+        cwd = "$HOME/.config/nvim/",
+    })
+end
+
+M.search_awesome_config = function()
+    require("telescope.builtin").find_files({
+        prompt_title = "< Awesomerc >",
+        cwd = "$HOME/.config/awesome/",
+    })
+end
+
 M.search_curr_buff = function()
     local opts = require('telescope.themes').get_dropdown({
         layout_config = {height=10},

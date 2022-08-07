@@ -213,6 +213,10 @@ local mappings = {
 
   f = {
     name = "Find",
+    a = {
+      "<cmd>lua require('user.telescope').search_awesome_config()<cr>",
+      "Search Awesome config folder",
+    },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     f = { "<cmd>Telescope find_files<cr>", "Find files" },
@@ -226,6 +230,10 @@ local mappings = {
     r = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+    v = {
+      "<cmd>lua require('user.telescope').search_dot_files()<cr>",
+      "Search neovim dotfiles",
+    },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
   },
 
