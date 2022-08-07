@@ -231,7 +231,7 @@ local mappings = {
     R = { "<cmd>Telescope registers<cr>", "Registers" },
     k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
     v = {
-      "<cmd>lua require('user.telescope').search_dot_files()<cr>",
+      "<cmd>lua require('user.telescope').search_dotfiles()<cr>",
       "Search neovim dotfiles",
     },
     C = { "<cmd>Telescope commands<cr>", "Commands" },
